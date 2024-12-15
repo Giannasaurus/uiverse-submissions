@@ -1,0 +1,64 @@
+.reset-base {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.card-typography {
+  font-family: "Helvetica", "Arial", sans-serif;
+  color: #e5e4e2;
+}
+
+.card-container {
+  perspective: 1000px;
+  width: 250px;
+  height: 400px;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  cursor: pointer;
+}
+
+.card-container:hover .card {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #121010;
+  border: 3px solid #e5e4e280;
+  border-radius: 50px;
+  opacity: 0.4;
+}
+
+.front {
+  z-index: 2;
+}
+
+.back {
+  transform: rotateY(180deg);
+  background-color: #1a1a1a;
+  opacity: 0.8;
+}
+
+.card-face {
+  box-shadow: 0 2px 50px 5px rgba(153, 153, 153, 0.3),
+    0 2px 25px 2px rgba(143, 64, 255, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+.card-container:hover .card-face {
+  box-shadow: 0 2px 60px 7px rgba(153, 153, 153, 0.4),
+    0 2px 35px 3px rgba(143, 64, 255, 0.3);
+}
